@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sarosh.foodrecipes.biryani"
+    android:background="@android:color/holo_orange_dark">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/tikka"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Malai Boti"
+        android:id="@+id/textView"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/background_dark"
+        android:textColor="@android:color/holo_orange_dark" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Pakistani Food"
+        android:id="@+id/textView2"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/background_dark"
+        android:textColor="@android:color/holo_orange_dark" />
+</RelativeLayout>

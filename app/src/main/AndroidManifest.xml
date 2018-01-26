@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sarosh.foodrecipes">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <activity android:name=".splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".pakistani" />
+        <activity android:name=".fast" />
+        <activity android:name=".chinese" />
+        <activity android:name=".italian" />
+        <activity android:name=".kabab" />
+        <activity android:name=".karahi" />
+        <activity android:name=".tikka" />
+        <activity android:name=".biryani" />
+        <activity android:name=".manchurian" />
+        <activity android:name=".rice" />
+        <activity android:name=".shashlik" />
+        <activity android:name=".chowmein" />
+        <activity android:name=".burger" />
+        <activity android:name=".pizza" />
+        <activity android:name=".fries" />
+        <activity android:name=".fried_chicken" />
+        <activity android:name=".pasta" />
+        <activity android:name=".lasagna" />
+        <activity android:name=".macroni" />
+        <activity android:name=".sphagetti" />
+    </application>
+
+</manifest>

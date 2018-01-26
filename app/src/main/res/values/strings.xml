@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Food Recipes</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="Menu">
+        <item>Pakistani Food</item>
+        <item>Fast Food</item>
+        <item>Chinese Food</item>
+        <item>Italian Food</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="hello_blank_fragment">Hello You are in <strong>HOME</strong> now.</string>
+
+    <string name="hello_blank_fragment1">Hello You are in <strong>SETTINGS</strong> now.</string>
+    <string name="hello_blank_fragment2">Hello You are in <strong>ABOUT</strong> now.</string>
+
+</resources>
