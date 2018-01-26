@@ -48,10 +48,13 @@ public class pakistani extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
                     String query = "SELECT * FROM pakistani_food WHERE ID='1'";
+
+
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
+
                         if(c.moveToFirst()){
                             do{
-                                name = c.getString(1);
+                               name = c.getString(1);
                                 ingredients = c.getString(2);
                                 recipe = c.getString(3);
 
@@ -62,7 +65,6 @@ public class pakistani extends AppCompatActivity {
 
                         dbstring ="Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
 
-
                         Intent intent = new Intent(pakistani.this, biryani.class);
                         intent.putExtra("valuesFromDatabase",dbstring);
                         startActivity(intent);
@@ -71,29 +73,107 @@ public class pakistani extends AppCompatActivity {
 
                     }
 
-                    Intent intent = new Intent(pakistani.this, biryani.class);
-                    startActivity(intent);
+              else if (i == 1){
+                    String name="";
+                    String ingredients ="";
+                    String recipe ="";
+                    SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
-              /* else if (i == 1){
+                    String query = "SELECT * FROM pakistani_food WHERE ID='2'";
+
+
+                    Cursor c = sqLiteDatabase.rawQuery(query, null);
+
+                    if(c.moveToFirst()){
+                        do{
+                            name = c.getString(1);
+                            ingredients = c.getString(2);
+                            recipe = c.getString(3);
+
+                        }while(c.moveToNext());
+
+                        c.close();
+                    }
+
+                    dbstring ="Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
+
                     Intent intent = new Intent(pakistani.this, karahi.class);
+                    intent.putExtra("valuesFromDatabase",dbstring);
                     startActivity(intent);
+
+                    sqLiteDatabase.close();
+
                 }
 
-                else if (i == 2){
+                else if (i == 2) {
+
+                    String name="";
+                    String ingredients ="";
+                    String recipe ="";
+                    SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+
+                    String query = "SELECT * FROM pakistani_food WHERE ID='3'";
+
+
+                    Cursor c = sqLiteDatabase.rawQuery(query, null);
+
+                    if(c.moveToFirst()){
+                        do{
+                            name = c.getString(1);
+                            ingredients = c.getString(2);
+                            recipe = c.getString(3);
+
+                        }while(c.moveToNext());
+
+                        c.close();
+                    }
+
+                    dbstring ="Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
+
                     Intent intent = new Intent(pakistani.this, kabab.class);
+                    intent.putExtra("valuesFromDatabase",dbstring);
                     startActivity(intent);
+
+                    sqLiteDatabase.close();
                 }
 
-                else if (i == 3){
+                else if (i == 3) {
+
+                    String name="";
+                    String ingredients ="";
+                    String recipe ="";
+                    SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+
+                    String query = "SELECT * FROM pakistani_food WHERE ID='4'";
+
+
+                    Cursor c = sqLiteDatabase.rawQuery(query, null);
+
+                    if(c.moveToFirst()){
+                        do{
+                            name = c.getString(1);
+                            ingredients = c.getString(2);
+                            recipe = c.getString(3);
+
+                        }while(c.moveToNext());
+
+                        c.close();
+                    }
+
+                    dbstring ="Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
+
                     Intent intent = new Intent(pakistani.this, tikka.class);
+                    intent.putExtra("valuesFromDatabase",dbstring);
                     startActivity(intent);
-                }*/
+
+                    sqLiteDatabase.close();
+
+                }
             }
         }
         );
 
         }
-
 
         class CustomAdapter extends BaseAdapter{
 

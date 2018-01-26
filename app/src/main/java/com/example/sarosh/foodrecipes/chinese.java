@@ -1,6 +1,8 @@
 package com.example.sarosh.foodrecipes;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class chinese extends AppCompatActivity {
+
+    DatabaseHelper databaseHelper = new DatabaseHelper(this);
+    String dbstring = "";
+
     int[] IMAGES = {R.drawable.rice, R.drawable.manchurian, R.drawable.chowmein, R.drawable.shashlik};
     String[] NAME = {"Chicken Fried Rice", "Chicken Manchurian", "Chicken Chowmein", "Chicken Shashlik"};
 
@@ -31,33 +37,134 @@ public class chinese extends AppCompatActivity {
         //Set onClickListener for the change on item selection
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                             @Override
-                                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                                                if (i == 0){
-                                                    Intent intent = new Intent(chinese.this, rice.class);
-                                                    startActivity(intent);
+                                                public void onItemClick (AdapterView <?> adapterView, View view,int i, long l){
+                                                    if (i == 0) {
 
-                                                }
+                                                        String name = "";
+                                                        String ingredients = "";
+                                                        String recipe = "";
+                                                        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
-                                                else if (i == 1){
-                                                    Intent intent = new Intent(chinese.this, manchurian.class);
-                                                    startActivity(intent);
-                                                }
+                                                        String query2 = "SELECT * FROM chinese_food WHERE ID_CHINESE='1'";
 
-                                                else if (i == 2){
-                                                    Intent intent = new Intent(chinese.this, chowmein.class);
-                                                    startActivity(intent);
-                                                }
 
-                                                else if (i == 3){
-                                                    Intent intent = new Intent(chinese.this, shashlik.class);
-                                                    startActivity(intent);
+                                                        Cursor c = sqLiteDatabase.rawQuery(query2, null);
+
+                                                        if (c.moveToFirst()) {
+                                                            do {
+                                                                name = c.getString(1);
+                                                                ingredients = c.getString(2);
+                                                                recipe = c.getString(3);
+
+                                                            } while (c.moveToNext());
+
+                                                            c.close();
+                                                        }
+
+                                                        dbstring = "Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
+
+                                                        Intent intent = new Intent(chinese.this, burger.class);
+                                                        intent.putExtra("valuesFromDatabase", dbstring);
+                                                        startActivity(intent);
+
+                                                        sqLiteDatabase.close();
+
+                                                    } else if (i == 1) {
+                                                        String name = "";
+                                                        String ingredients = "";
+                                                        String recipe = "";
+                                                        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+
+                                                        String query2 = "SELECT * FROM chinese_food WHERE ID_CHINESE='2'";
+
+
+                                                        Cursor c = sqLiteDatabase.rawQuery(query2, null);
+
+                                                        if (c.moveToFirst()) {
+                                                            do {
+                                                                name = c.getString(1);
+                                                                ingredients = c.getString(2);
+                                                                recipe = c.getString(3);
+
+                                                            } while (c.moveToNext());
+
+                                                            c.close();
+                                                        }
+
+                                                        dbstring = "Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
+
+                                                        Intent intent = new Intent(chinese.this, pizza.class);
+                                                        intent.putExtra("valuesFromDatabase", dbstring);
+                                                        startActivity(intent);
+
+                                                        sqLiteDatabase.close();
+
+                                                    } else if (i == 2) {
+                                                        String name = "";
+                                                        String ingredients = "";
+                                                        String recipe = "";
+                                                        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+
+                                                        String query2 = "SELECT * FROM chinese_food WHERE ID_CHINESE='3'";
+
+
+                                                        Cursor c = sqLiteDatabase.rawQuery(query2, null);
+
+                                                        if (c.moveToFirst()) {
+                                                            do {
+                                                                name = c.getString(1);
+                                                                ingredients = c.getString(2);
+                                                                recipe = c.getString(3);
+
+                                                            } while (c.moveToNext());
+
+                                                            c.close();
+                                                        }
+
+                                                        dbstring = "Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
+
+                                                        Intent intent = new Intent(chinese.this, fried_chicken.class);
+                                                        intent.putExtra("valuesFromDatabase", dbstring);
+                                                        startActivity(intent);
+
+                                                        sqLiteDatabase.close();
+                                                    } else if (i == 3) {
+
+                                                        String name = "";
+                                                        String ingredients = "";
+                                                        String recipe = "";
+                                                        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+
+                                                        String query2 = "SELECT * FROM chinese_food WHERE ID_CHINESE='4'";
+
+
+                                                        Cursor c = sqLiteDatabase.rawQuery(query2, null);
+
+                                                        if (c.moveToFirst()) {
+                                                            do {
+                                                                name = c.getString(1);
+                                                                ingredients = c.getString(2);
+                                                                recipe = c.getString(3);
+
+                                                            } while (c.moveToNext());
+
+                                                            c.close();
+                                                        }
+
+                                                        dbstring = "Name: " + name + "\n" + "Ingredients: " + ingredients + "\n" + "Recipe: " + recipe;
+
+                                                        Intent intent = new Intent(chinese.this, fries.class);
+                                                        intent.putExtra("valuesFromDatabase", dbstring);
+                                                        startActivity(intent);
+
+                                                        sqLiteDatabase.close();
+
                                                 }
                                             }
                                         }
-        );
+            );
 
-    }
-
+        }
 
     class CustomAdapter extends BaseAdapter {
 
